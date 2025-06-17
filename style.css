@@ -244,11 +244,6 @@ h3 {
   height: 42px;
 }
 
-.link-box:hover {
-  background-color: burlywood;
-  transform: scale(1.05);
-}
-
 .link-box img {
   width: 20px;
   height: 20px;
