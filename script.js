@@ -95,4 +95,4 @@ searchInput.addEventListener("input", function () {
       cardContainer.prepend(card);
     }
   });
-});
+}); 
