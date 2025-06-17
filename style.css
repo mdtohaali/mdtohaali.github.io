@@ -245,7 +245,7 @@ h3 {
 }
 
 .link-box:hover {
-  background-color: #3a3a3a;
+  background-color: burlywood;
   transform: scale(1.05);
 }
 
