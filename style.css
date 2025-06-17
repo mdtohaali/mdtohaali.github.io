@@ -1,17 +1,10 @@
-/* Base reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: whitesmoke;
   color: #333;
 }
 
-/* Header */
 .sticky-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -19,7 +12,7 @@ body {
   background-color: #35a392;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 20px;
   z-index: 1000;
 }
@@ -27,9 +20,18 @@ body {
 .logo {
   height: 50px;
   width: auto;
+  position: absolute;
+  left: 20px;
 }
 
-/* Centered text */
+.menu-icon {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
 .welcome-text {
   position: absolute;
   left: 50%;
@@ -39,28 +41,17 @@ body {
   font-size: 18px;
   animation: fadeSlide 1s ease-in-out;
   white-space: nowrap;
-  z-index: 1050;
 }
 
-.menu-icon {
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* Animation for welcome */
 @keyframes fadeSlide {
-  0% { opacity: 0; transform: translate(-50%, -10px); }
-  100% { opacity: 1; transform: translate(-50%, 0); }
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-/* Main content */
 main {
   padding: 100px 20px 40px;
 }
 
-/* Card styling */
 .card {
   max-width: 700px;
   margin: 0 auto 30px;
@@ -72,7 +63,7 @@ main {
   overflow: hidden;
 }
 
-.card::before {
+.ayah-card::before {
   content: '';
   position: absolute;
   left: 0; top: 0; bottom: 0;
@@ -83,7 +74,7 @@ main {
 }
 
 .ayah-card {
-  text-align: center;
+  text-align: left;
 }
 
 #ayahText {
@@ -109,26 +100,112 @@ main {
   }
 }
 
-/* Mission section */
-.mission-section {
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px 16px;
+  font-size: 14px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  width: 90%;
+  max-width: 500px;
+  transition: border-color 0.3s ease;
+  font-weight: bold;
+}
+
+.search-input:focus {
+  border-color: #35a392;
+}
+
+.scroll-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.scroll-container .fade-card {
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
+  padding: 30px 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
 }
 
-.mission-section h2 {
-  font-size: 24px;
-  color: #222;
-  margin-bottom: 12px;
-  text-align: center;
+.scroll-container .fade-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.mission-section p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #333;
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Footer */
+.read-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #35a392;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  float: right;
+}
+
+.read-btn:hover {
+  background-color: #2a867a;
+} 
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 100vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  position: relative;
+}
+
+.highlight {
+  background-color: #ffe564;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.highlight-card {
+  border: 3px solid #35a392 !important;
+}
+
 footer {
   background-color: #2ea18e;
   color: #fff;
@@ -156,7 +233,7 @@ h3 {
   justify-content: center;
   gap: 8px;
   text-decoration: none;
-  color: #fff;
+  color: black;
   background-color: white;
   padding: 8px 12px;
   border-radius: 50px;
@@ -168,7 +245,7 @@ h3 {
 }
 
 .link-box:hover {
-  background-color: #3a3a3a;
+  background-color:lightgray;
   transform: scale(1.05);
 }
 
@@ -177,49 +254,11 @@ h3 {
   height: 20px;
   border-radius: 50%;
   filter: invert(1);
+  
 }
 
 .copyright {
   font-size: 13px;
   color: #ccc;
   margin-top: 20px;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  .logo {
-    height: 40px;
-  }
-
-  .welcome-text {
-    font-size: 16px;
-  }
-
-  .menu-icon {
-    font-size: 24px;
-  }
-
-  .link-box {
-    font-size: 12px;
-    min-width: 100px;
-    height: 38px;
-    padding: 6px 10px;
-  }
-
-  .link-box img {
-    width: 18px;
-    height: 18px;
-  }
-
-  h3 {
-    font-size: 18px;
-  }
-
-  .mission-section h2 {
-    font-size: 20px;
-  }
-
-  #ayahText {
-    font-size: 18px;
-  }
 }
