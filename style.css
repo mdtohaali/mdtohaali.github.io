@@ -173,7 +173,7 @@ main {
 
 .read-btn:hover {
   background-color: #2a867a;
-} 
+}
 
 .modal {
   display: none;
@@ -245,7 +245,7 @@ h3 {
 }
 
 .link-box:hover {
-  background-color:lightgray;
+  background-color: #3a3a3a;
   transform: scale(1.05);
 }
 
@@ -254,7 +254,6 @@ h3 {
   height: 20px;
   border-radius: 50%;
   filter: invert(1);
-  
 }
 
 .copyright {
