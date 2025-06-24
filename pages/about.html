@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About DEEN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #ffffff;
+      --accent: #00b4d8;
+      --bg-gradient: linear-gradient(135deg, #1e3c72, #2a5298);
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --text-light: #f0f4f8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1s ease;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.85;
+      color: #e2eaf3;
+      font-weight: 400;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 40px 25px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>About DEEN</h1>
+    <p>
+      DEEN is a values-driven community initiative committed to fostering moral growth, thoughtful reflection, and a culture of mutual support. It believes that integrity, unity, and the illumination of knowledge are essential to building a balanced and harmonious society. Guided by a deep sense of purpose and responsibility, DEEN works to inspire meaningful transformation in both individuals and communities. Its efforts reflect a philosophy rooted in compassion, ethical principles, and a vision for a life of purpose.
+    </p>
+  </div>
+
+
+</body>
+</html>
