@@ -1,7 +1,4 @@
 // ==================== 🔹 DOM References ====================
-const dynamicText = document.getElementById("dynamicText");
-const ayahText = document.getElementById("ayahText");
-const ayahRef = document.getElementById("ayahRef");
 const searchInput = document.getElementById("searchInput");
 const cardContainer = document.getElementById("cardContainer");
 const menuIcon = document.querySelector('.menu-icon');
@@ -10,63 +7,11 @@ const closeBtn = document.getElementById('closeMenuBtn');
 const noResultsCard = document.getElementById("noResultsCard");
 
 // ==================== 🔹 Data Constants ====================
-const dhikr = [
-  "Allahu Akbar",
-  "Subhanallah",
-  "Alhamdulillah",
-  "La ilaha illallah",
-  "Astaghfirullah"
-];
-
-const ayahs = [
-  { text: "বল,তিনিই আল্লাহ,এক ও অদ্বিতীয়।", ref: "Qur'an ১১২:১" },
-  { text: "নিশ্চয়ই কষ্টের সাথে রয়েছে স্বস্তি।", ref: "Qur'an ৯৪:৬" },
-  { text: "মিথ্যারোপকারীদের জন্য সেদিনের দুর্ভোগ।", ref: "Qur'an ৭৭:১৫" },
-  { text: "অতএব তুমি মহান রবের নামে তাসবীহ পাঠ করো।", ref: "Qur'an ৬৯:৫২" },
-  { text: "আর তোমার রবের প্রতি আকৃষ্ট হও।", ref: "Qur'an ৯৪:৮" },
-  { text: "সে মনে করে তার সম্পদ তাকে চিরজীবী করবে।", ref: "Qur'an ১০৪:৩" }
-];
-
 const cards = [
   { title: "সালাতের গুরুত্ব", details: "সালাত বা নামাজ ...", link: "pages/salat.html" },
   { title: "রমজানের গুরুত্ব", details: "রমজান মাসের গুরুত্ব ...", link: "pages/siam.html" },
   { title: "হজের গুরুত্ব", details: "হজ ইসলামের পঞ্চস্তম্ভ ...", link: "pages/hajj.html" }
 ];
-
-// ==================== 🔹 Dynamic Dhikr ====================
-let dhikrIndex = 0;
-
-function rotateDhikr() {
-  if (!dynamicText) return;
-
-  dynamicText.textContent = dhikr[dhikrIndex];
-  dynamicText.style.animation = "none";
-  void dynamicText.offsetWidth;
-  dynamicText.style.animation = "fadeSlide 1s ease-in-out";
-
-  dhikrIndex = (dhikrIndex + 1) % dhikr.length;
-}
-
-setInterval(rotateDhikr, 3000);
-
-// ==================== 🔹 Random Ayah ====================
-function showRandomAyah() {
-  if (!ayahText || !ayahRef) return;
-
-  const ayah = ayahs[Math.floor(Math.random() * ayahs.length)];
-
-  ayahText.style.opacity = "0";
-  ayahText.style.transform = "translateY(20px)";
-  void ayahText.offsetWidth;
-
-  ayahText.textContent = ayah.text;
-  ayahRef.textContent = ayah.ref;
-
-  ayahText.style.animation = "ayahAnimate 1s ease-in-out forwards";
-}
-
-showRandomAyah();
-setInterval(showRandomAyah, 6000);
 
 // ==================== 🔹 Generate Cards ====================
 function generateCards() {
