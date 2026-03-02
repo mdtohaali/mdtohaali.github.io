@@ -24,7 +24,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:28px 8%;
+    padding:20px 8%;
 }
 
 .left{
@@ -34,27 +34,51 @@ header{
 }
 
 .left img{
-    width:42px;
-    height:42px;
+    width:50px;
+    height:50px;
     border-radius:50%;
     object-fit:cover;
 }
 
 .left h1{
-    font-size:16px;
+    font-size:18px;
     font-weight:600;
     letter-spacing:.5px;
 }
 
-nav a{
+.left .bio{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:2px;
+}
+
+/* Nav */
+nav{
+    position: relative;
+}
+
+nav ul{
+    display:flex;
+    gap:32px;
+    list-style:none;
+}
+
+nav ul li a{
     text-decoration:none;
     color:var(--muted);
-    margin-left:32px;
     font-size:14px;
     transition:.3s;
 }
 
-nav a:hover{
+nav ul li a:hover{
+    color:var(--text);
+}
+
+/* Hamburger */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
     color:var(--text);
 }
 
@@ -113,7 +137,28 @@ footer{
     font-size:14px;
 }
 
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
     .hero h2{font-size:36px;}
-    nav{display:none;}
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:50px;
+        right:0;
+        background:var(--bg);
+        width:200px;
+        padding:10px 0;
+        border-radius:6px;
+        box-shadow:0 4px 12px rgba(0,0,0,.5);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
 }
