@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +12,18 @@
     <header>
         <div class="left">
             <img src="images/profile.jpg" alt="Profile">
-            <h1>মোঃ তোহা আলী</h1>
+            <div>
+                <h1>মোঃ তোহা আলী</h1>
+                <p class="bio">Full-stack Developer & Designer | Passionate about minimal and clean interfaces</p>
+            </div>
         </div>
         <nav>
-            <a href="#">Work</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -30,8 +36,7 @@
             I design <span>minimal</span> and premium digital experiences.
         </h2>
         <p>
-            Focused on clarity, performance and timeless design.  
-            Building modern websites with refined aesthetics and strong visual hierarchy.
+            Focused on clarity, performance and timeless design. Building modern websites with refined aesthetics and strong visual hierarchy.
         </p>
     </section>
 
@@ -39,5 +44,7 @@
     <footer>
         © 2026 mdtohaali
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
