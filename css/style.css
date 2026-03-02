@@ -48,7 +48,6 @@ header{
     color:var(--muted);
 }
 
-/* Date Circle */
 .date-circle{
     width:45px;
     height:45px;
@@ -61,35 +60,10 @@ header{
     cursor:pointer;
 }
 
-/* Divider */
 .divider{
     height:1px;
     background:linear-gradient(to right, transparent, rgba(255,255,255,.15), transparent);
     margin:0 8%;
-}
-
-/* Hero */
-.hero{
-    padding:140px 8% 120px;
-    max-width:900px;
-}
-
-.hero h2{
-    font-size:54px;
-    line-height:1.1;
-    margin-bottom:24px;
-}
-
-.hero span{
-    background:linear-gradient(90deg,var(--accent),#a78bfa);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-    font-size:17px;
-    color:var(--muted);
-    line-height:1.8;
 }
 
 /* ===== CALENDAR ===== */
@@ -149,6 +123,30 @@ header{
     text-align:center;
     background:#1c1f2a;
     border-radius:8px;
+}
+
+/* ===== HERO ===== */
+.hero{
+    padding:140px 8% 120px;
+    max-width:900px;
+}
+
+.hero h2{
+    font-size:54px;
+    line-height:1.1;
+    margin-bottom:24px;
+}
+
+.hero span{
+    background:linear-gradient(90deg,var(--accent),#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    font-size:17px;
+    color:var(--muted);
+    line-height:1.8;
 }
 
 footer{
