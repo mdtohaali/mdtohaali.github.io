@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  padding: 2rem;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-info p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+.right-panel {
+  margin-left: auto;
+}
+
+.date-display p {
+  cursor: pointer;
+  margin: 0.3rem 0;
+}
+
+.event-calendar {
+  margin-top: 1rem;
+}
