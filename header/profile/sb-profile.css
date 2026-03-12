@@ -1,0 +1,23 @@
+.sidebar-profile{
+    text-align:center;
+    margin-top:50px;
+}
+
+.sidebar-img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid #00B840;
+}
+
+.sidebar-name{
+    font-weight:bold;
+    margin-top:10px;
+    color:white;
+}
+
+.sidebar-bio{
+    font-size:14px;
+    color:lightgray;
+    font-weight:bold;
+}
