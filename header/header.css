@@ -1,53 +1,110 @@
-/* সাইডবার ওপেন থাকলে বডি স্ক্রল লক */
-body.sidebar-open {
-    overflow: hidden !important;
-    height: 100vh;
+/* ১. হেডারের মেইন র‍্যাপার (যা টুইটারের মতো হাইড/শো হবে) */
+.header-area-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--f-card); 
+    border-bottom: 1px solid var(--f-border);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body {
-    background-color: var(--f-bg);
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+/* স্ক্রল করলে পুরো হেডার এবং সার্চ বক্স একসাথে উপরে উঠে যাবে */
+.header-area-wrapper.header-hidden {
+    transform: translateY(-110%);
+}
+
+/* ২. হেডার কন্টেন্ট লেআউট */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: transparent;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+}
+
+.header-right {
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--f-accent);
+    flex-shrink: 0;
+}
+
+.name-box {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 700;
     color: var(--f-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.f-container {
-    max-width: 800px;
-    margin: 0 auto;
-    /* হেডার এবং সার্চ বক্সের জন্য টপ প্যাডিং বাড়ানো হয়েছে যাতে কন্টেন্ট নিচে না ঢোকে */
-    padding: 150px 12px 20px; 
+.bio {
+    font-size: 11px;
+    color: var(--f-text-muted);
+    white-space: nowrap;
 }
 
-/* সার্চবার ডিজাইন - স্মার্ট হেডারের ভেতর সেট করা হয়েছে */
+.header-cal-btn-premium {
+    color: var(--f-accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* ৩. সার্চ বক্স ডিজাইন */
 .f-search-wrapper {
     max-width: 800px;
-    margin: 0 auto; 
-    padding: 0 12px;
-    display: block !important;
-    clear: both;
-    position: relative;
-    z-index: 10;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .f-search-input {
     width: 100%;
-    padding: 12px 18px;
-    border-radius: 12px;
+    padding: 10px 15px;
+    border-radius: 10px;
     border: 1px solid var(--f-border);
     background: var(--f-search-bg);
     color: var(--f-text-primary);
     font-size: 14px;
     outline: none;
-    box-sizing: border-box;
-    box-shadow: 0 4px 12px var(--f-shadow);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .f-search-input:focus {
     border-color: var(--f-accent);
 }
 
-/* কার্ড স্টাইল */
+/* ৪. নিউজফিড কন্টেন্ট স্পেসিং */
+.f-container {
+    max-width: 800px;
+    margin: 0 auto;
+    /* হেডার + সার্চ বক্সের উচ্চতা অনুযায়ী প্যাডিং যাতে কন্টেন্ট নিচে থাকে */
+    padding: 135px 12px 20px; 
+}
+
+/* ৫. কার্ড স্টাইল এবং অন্যান্য (আপনার আগের কোড) */
 .f-item {
     background: var(--f-card);
     border-radius: 15px;
@@ -58,8 +115,6 @@ body {
     cursor: pointer;
     box-shadow: 0 2px 5px var(--f-shadow);
 }
-
-.f-item.no-title { padding-bottom: 38px; }
 
 .f-meta-row { display: flex; align-items: center; margin-bottom: 6px; }
 
@@ -86,26 +141,7 @@ body {
     margin: 0;
 }
 
-/* উক্তি স্টাইল */
-.f-item.no-title .f-title {
-    font-size: 15px; 
-    font-weight: 400; 
-    font-style: italic; 
-    color: var(--f-text-secondary) !important;
-    border-left: 3px solid var(--f-accent-soft);
-    padding-left: 12px;
-}
-
-.f-quote-author {
-    position: absolute; 
-    bottom: 12px; 
-    right: 20px;
-    font-size: 11px; 
-    color: var(--f-text-muted);
-}
-.f-quote-author::before { content: "— "; }
-
-/* ঝাঁকুনি মুক্ত স্মুথ অ্যাকরডিয়ান */
+/* ডিটেইলস অ্যানিমেশন */
 .f-details-wrapper {
     display: grid;
     grid-template-rows: 0fr;
@@ -120,5 +156,4 @@ body {
     border-top: 1px solid var(--f-divider);
     color: var(--f-text-secondary);
     font-size: 14.5px; 
-    line-height: 1.75;
 }
