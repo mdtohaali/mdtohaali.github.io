@@ -23,7 +23,7 @@ export function renderNewsFeed() {
     // সর্টিং করা ডাটা নিয়ে আসা
     let sortedData = getSortedData([...feedData]);
 
-    // ৩. অটো-আইডি লজিক: যদি ডাটায় id না থাকে, তবে অটো জেনারেট হবে
+    // ৩. অটো-আইডি লজিক
     const finalData = sortedData.map((item, index) => {
         return {
             ...item,
@@ -31,12 +31,8 @@ export function renderNewsFeed() {
         };
     });
 
+    // এখানে শুধু কন্টেন্ট লিস্ট থাকবে, সার্চ বক্স এখন index.html এ
     return `
-        <div class="f-search-wrapper">
-            <input type="text" id="fSearch" class="f-search-input" 
-                   placeholder="শিরোনাম, লেখক বা বিষয় দিয়ে খুঁজুন..." 
-                   onkeyup="filterKnowledge()">
-        </div>
         <div id="fList" class="f-container">
             ${generateFeedHTML(finalData)}
         </div>
@@ -101,4 +97,3 @@ window.filterKnowledge = function() {
     );
     document.getElementById('fList').innerHTML = generateFeedHTML(filtered);
 };
-
