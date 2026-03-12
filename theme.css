@@ -1,0 +1,38 @@
+
+/* ব্রাউজারকে সিগন্যাল দেওয়া যে এই ওয়েবসাইট লাইট ও ডার্ক উভয় মোড সাপোর্ট করে */
+:root {
+    color-scheme: light dark;
+}
+
+/* ১. ডিফল্ট লাইট থিম */
+:root {
+    --f-bg: #f9f9f9;
+    --f-card: #ffffff;
+    --f-text-primary: #1a1a1a;
+    --f-text-secondary: #555555;
+    --f-text-muted: #888888;
+    --f-border: rgba(0, 0, 0, 0.08);
+    --f-search-bg: #ffffff;
+    --f-shadow: rgba(0, 0, 0, 0.04);
+    --f-accent: #EE3F3F;
+    --f-accent-soft: rgba(238, 63, 63, 0.08);
+    --f-divider: #f2f2f2;
+}
+
+/* ২. ডার্ক থিম - এখানে !important ব্যবহারের প্রয়োজন নেই যদি আপনার মিডিয়া কুয়েরি কাজ করে */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --f-bg: #121212;        
+        --f-card: #1e1e1e;      
+        --f-text-primary: #f0f0f0; /* আরও একটু উজ্জ্বল করা হয়েছে পড়ার সুবিধার জন্য */
+        --f-text-secondary: #b0b0b0;
+        --f-text-muted: #777777;
+        --f-border: rgba(255, 255, 255, 0.12);
+        --f-search-bg: #252525;
+        --f-shadow: rgba(0, 0, 0, 0.4);
+        --f-accent: #ff6b6b;    
+        --f-accent-soft: rgba(255, 107, 107, 0.15);
+        --f-divider: #2c2c2c;
+    }
+}
+
