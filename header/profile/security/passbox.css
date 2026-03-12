@@ -1,0 +1,114 @@
+/* passbox.css - Ultra Modern & Professional Edition */
+
+.private-box {
+    margin: 25px auto;           
+    padding: 35px 25px;   
+    text-align: center;
+    width: 88%;            
+    box-sizing: border-box;
+    display: none; 
+
+    /* ট্রান্সপারেন্ট গ্লাস ব্যাকগ্রাউন্ড */
+    background: rgba(87, 1, 1, 0.25); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* প্রফেশনাল সূক্ষ্ম বর্ডার */
+    border: 1px solid rgba(238, 63, 63, 0.2);
+    border-radius: 20px;
+    
+    /* সফট শ্যাডো */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.private-box:hover {
+    background: rgba(87, 1, 1, 0.2);
+    border-color: rgba(238, 63, 63, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(238, 63, 63, 0.15);
+}
+
+.private-title {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#passwordInput {
+    width: 85%;
+    padding: 14px 15px;
+    margin-bottom: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    color: #fff;
+    text-align: center;
+    outline: none; /* ডিফল্ট বর্ডার দূর করবে */
+    -webkit-tap-highlight-color: transparent; /* মোবাইলে ট্যাপ ইফেক্ট বন্ধ করবে */
+    font-size: 16px;
+    letter-spacing: 4px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* পাসওয়ার্ড ইনপুট ক্লিক অ্যানিমেশন */
+#passwordInput:focus {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: #EE3F3F;
+    box-shadow: 0 0 15px rgba(238, 63, 63, 0.2);
+    width: 90%;
+    transform: scale(1.02);
+}
+
+#unlockBtn {
+    background:#08603F;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    /* ক্লিক বক্স সমস্যা সমাধানের নতুন কোড */
+    outline: none; 
+    -webkit-tap-highlight-color: transparent; 
+    user-select: none; 
+}
+
+/* বাটন হোভার অ্যানিমেশন */
+#unlockBtn:hover {
+    background: #EE3F3F;
+    color: #fff;
+    border-color: #EE3F3F;
+    box-shadow: 0 8px 25px rgba(238, 63, 63, 0.4);
+    transform: scale(1.08);
+    letter-spacing: 2.5px;
+}
+
+/* ক্লিক করার সময় ফোকাস বক্স বন্ধ রাখা */
+#unlockBtn:focus {
+    outline: none;
+}
+
+#unlockBtn:active {
+    transform: scale(0.95);
+    background: #ff4d4d; /* ক্লিকের সময় হালকা রঙ পরিবর্তন */
+}
+
+#lockMessage {
+    font-size: 12px;
+    margin-top: 15px;
+    color: #EE3F3F;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
