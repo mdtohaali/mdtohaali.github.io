@@ -1,8 +1,8 @@
-import { renderLifeGraph } from '../sidebar/graph/graph-logic.js';
+Import { renderLifeGraph } from '../sidebar/graph/graph-logic.js';
 import { renderZakatGraph } from '../sidebar/graph/zakat-logic.js';
 
 const SETTINGS = {
-    password: " ", 
+    password: "t.21t",
     basePenalty: 10
 };
 
@@ -28,6 +28,7 @@ const renderSecurityBox = () => {
         <div id="privateContent"></div>
     `;
     
+    // HTML ইনজেক্ট করার পর সিকিউরিটি লজিক ইনিশিয়ালাইজ করা
     initializeSecurity();
 };
 
@@ -44,8 +45,8 @@ const initializeSecurity = () => {
     const attemptUnlock = () => {
         if (isLocked) return;
 
-        // এখানে .trim() সরিয়ে দেওয়া হয়েছে যাতে স্পেস কাউন্ট হয়
-        if (passwordInput.value === SETTINGS.password) {
+        if (passwordInput.value.trim() === SETTINGS.password) {
+            // সফল হলে সিকিউরিটি বক্স সরিয়ে ফেলা
             if (privateBox) privateBox.remove(); 
             if (publicSection) publicSection.style.display = 'none';
 
@@ -91,7 +92,12 @@ function startLockout(input, btn, msg) {
     }, 1000);
 }
 
+//DOMContentLoaded ইভেন্টে রেন্ডারিং শুরু করা
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     renderSecurityBox();
 } else {
-    document.addEventListener('DOMContentLoaded', renderSদিয়ে
+    document.addEventListener('DOMContentLoaded', renderSecurityBox);
+}
+
+
+
