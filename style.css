@@ -1,0 +1,31 @@
+/* ১. থিম সবার আগে */
+@import url('theme.css');
+
+/* ২. হেডার এবং প্রোফাইল সেকশন */
+@import url("header/header.css");
+@import url("header/profile/profile.css");
+@import url("header/profile/sb-profile.css");
+@import url("header/profile/security/passbox.css");
+@import url("header/profile/sidebar/sidebar.css");
+@import url("header/profile/sidebar/graph/graph.css");
+@import url("header/profile/public/public.css");
+
+/* ৩. ক্যালেন্ডার এবং ফিড (বডি) */
+@import url("header/calendar/calendar.css");
+@import url("body/feed-style.css");
+/* এটি style.css এ একবার লিখে রাখুন */
+.custom-link {
+    display: inline-block;
+    color: var(--f-accent);
+    padding: 5px 12px;
+    border: 1px solid var(--f-accent);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.custom-link:hover {
+    background: var(--f-accent);
+    color: #fff;
+}
+
