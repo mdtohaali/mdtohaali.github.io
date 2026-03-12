@@ -1,0 +1,42 @@
+/* ১. হেডারের মেইন র‍্যাপার (যা হাইড/শো হবে) */
+.header-area-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--f-card); 
+    border-bottom: 1px solid var(--f-border);
+    /* স্মুথলি উঠা-নামা করার জন্য অ্যানিমেশন */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ২. স্ক্রল করলে এই ক্লাসটি হেডারের পুরো অংশকে উপরে ঠেলে দেবে */
+.header-area-wrapper.header-hidden {
+    transform: translateY(-110%);
+}
+
+/* ৩. হেডার কন্টেন্ট */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: transparent; /* র‍্যাপারে ব্যাকগ্রাউন্ড আছে তাই এটি স্বচ্ছ */
+}
+
+/* ৪. টাইপো ও বাটন স্টাইল */
+.header-title {
+    color: var(--f-text-primary);
+}
+
+.header-cal-btn-premium {
+    color: var(--f-accent);
+}
+
+/* ৫. সার্চ বক্স যদি জাভাস্ক্রিপ্ট দিয়ে এর ভেতরে ইনজেক্ট হয় */
+#search-box-container {
+    width: 100%;
+    background: transparent;
+}
+
