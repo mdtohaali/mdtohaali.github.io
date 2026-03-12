@@ -1,0 +1,117 @@
+/* সাইডবার ওপেন থাকলে বডি স্ক্রল লক */
+body.sidebar-open {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
+body {
+    background-color: var(--f-bg); /* আপডেট */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: var(--f-text-primary); /* আপডেট */
+}
+
+.f-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px 20px;
+}
+
+/* সার্চবার ডিজাইন */
+.f-search-wrapper {
+    max-width: 800px;
+    margin: 15px auto 20px;
+    padding: 0 12px;
+    display: block;
+    clear: both;
+}
+
+.f-search-input {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--f-border); /* আপডেট */
+    background: var(--f-search-bg); /* আপডেট */
+    color: var(--f-text-primary); /* আপডেট */
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px var(--f-shadow); /* আপডেট */
+}
+
+/* কার্ড স্টাইল */
+.f-item {
+    background: var(--f-card); /* আপডেট */
+    border-radius: 15px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border: 1px solid var(--f-border); /* আপডেট */
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--f-shadow); /* আপডেট */
+}
+
+.f-item.no-title { padding-bottom: 38px; }
+
+.f-meta-row { display: flex; align-items: center; margin-bottom: 6px; }
+
+.f-cat {
+    font-size: 10px; 
+    font-weight: 700; 
+    color: var(--f-accent); /* আপডেট */
+    background: var(--f-accent-soft); /* আপডেট */
+    padding: 2px 8px; 
+    border-radius: 4px;
+}
+
+.f-author { 
+    font-size: 10.5px; 
+    color: var(--f-text-muted); /* আপডেট */
+    margin-left: 6px; 
+}
+
+.f-title {
+    color: var(--f-text-primary) !important; /* আপডেট */
+    font-size: 16px; 
+    font-weight: 600;
+    line-height: 1.45; 
+    margin: 0;
+}
+
+/* উক্তি স্টাইল */
+.f-item.no-title .f-title {
+    font-size: 15px; 
+    font-weight: 400; 
+    font-style: italic; 
+    color: var(--f-text-secondary) !important; /* আপডেট */
+    border-left: 3px solid var(--f-accent-soft); /* আপডেট */
+    padding-left: 12px;
+}
+
+.f-quote-author {
+    position: absolute; 
+    bottom: 12px; 
+    right: 20px;
+    font-size: 11px; 
+    color: var(--f-text-muted); /* আপডেট */
+}
+.f-quote-author::before { content: "— "; }
+
+/* ঝাঁকুনি মুক্ত স্মুথ অ্যাকরডিয়ান */
+.f-details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.f-item.active .f-details-wrapper { grid-template-rows: 1fr; }
+.f-details-content { overflow: hidden; }
+.f-content-inner {
+    padding-top: 15px; 
+    margin-top: 15px;
+    border-top: 1px solid var(--f-divider); /* আপডেট */
+    color: var(--f-text-secondary); /* আপডেট */
+    font-size: 14.5px; 
+    line-height: 1.75;
+}
+
