@@ -5,10 +5,8 @@ function getSortedData(data) {
     const priorityItems = data.filter(item => item.priority !== undefined && item.priority !== null);
     const randomItems = data.filter(item => item.priority === undefined || item.priority === null);
 
-    // ১. প্রায়োরিটি সর্ট
     priorityItems.sort((a, b) => a.priority - b.priority);
 
-    // ২. সাধারণ তথ্য র্যান্ডমাইজ
     for (let i = randomItems.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [randomItems[i], randomItems[j]] = [randomItems[j], randomItems[i]];
@@ -20,10 +18,8 @@ function getSortedData(data) {
 export function renderNewsFeed() {
     if (!feedData || feedData.length === 0) return '<p style="text-align:center; padding:20px;">কোনো তথ্য নেই।</p>';
 
-    // সর্টিং করা ডাটা নিয়ে আসা
     let sortedData = getSortedData([...feedData]);
 
-    // ৩. অটো-আইডি লজিক
     const finalData = sortedData.map((item, index) => {
         return {
             ...item,
@@ -31,6 +27,7 @@ export function renderNewsFeed() {
         };
     });
 
+    // সার্চ বক্স এখান থেকে সরানো হয়েছে
     return `
         <div id="fList" class="f-container">
             ${generateFeedHTML(finalData)}
@@ -72,7 +69,6 @@ function generateFeedHTML(data) {
     }).join('');
 }
 
-// কার্ড টগল লজিক
 window.handleCardToggle = function(element, canExpand) {
     if (!canExpand) return;
     const isActive = element.classList.contains('active');
@@ -85,7 +81,6 @@ window.handleCardToggle = function(element, canExpand) {
     }
 };
 
-// সার্চ লজিক
 window.filterKnowledge = function() {
     const term = document.getElementById('fSearch').value.toLowerCase().trim();
     const filtered = feedData.filter(p => 
