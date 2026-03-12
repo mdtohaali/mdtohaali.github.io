@@ -1,0 +1,199 @@
+/* ১. গ্লোবাল রিসেট */
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ২. হেডারের ক্যালেন্ডার আইকন বাটন */
+.header-cal-btn-premium {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--f-accent); /* থিম কালার অনুযায়ী */
+    opacity: 0.8;
+}
+
+.header-cal-btn-premium:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ৩. সাইডবার কন্টেইনার (গ্লাস ইফেক্ট) */
+.cal-glass-sidebar {
+    position: fixed;
+    top: 0; 
+    right: -350px;
+    width: 320px; 
+    height: 100vh;
+    /* লাইট ও ডার্ক মোড অনুযায়ী ব্যাকগ্রাউন্ড পরিবর্তন হবে */
+    background: var(--f-card); 
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    z-index: 100000;
+    transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 40px var(--f-shadow);
+    overflow-y: auto;
+    color: var(--f-text-primary);
+}
+
+/* ডার্ক মোডে সাইডবারকে একটু গ্লসি ডার্ক লুক দেওয়ার জন্য */
+@media (prefers-color-scheme: dark) {
+    .cal-glass-sidebar {
+        background: linear-gradient(135deg, rgba(25, 25, 25, 0.98), rgba(15, 15, 15, 0.99));
+    }
+}
+
+.cal-glass-sidebar.active { 
+    right: 0 !important; 
+}
+
+/* ৪. ক্লোজ বাটন ও ক্যালিগ্রাফি */
+.cal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background: var(--f-accent-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--f-accent);
+    font-size: 18px;
+    transition: 0.3s;
+    z-index: 100;
+    border: 1px solid var(--f-border);
+}
+
+.cal-close-btn:hover {
+    background: var(--f-accent);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.premium-header-area {
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.calligraphy-text {
+    font-size: 45px;
+    color: var(--f-accent);
+    margin-bottom: 5px;
+}
+
+.sidebar-header-desc {
+    font-size: 12px;
+    color: var(--f-text-secondary);
+    opacity: 0.8;
+    line-height: 1.6;
+    padding: 0 15px;
+}
+
+/* ৫. আজকের তারিখ কার্ড */
+.date-container-glass-premium {
+    margin: 15px 20px;
+    padding: 20px;
+    background: var(--f-bg);
+    border-radius: 25px;
+    border: 1px solid var(--f-border);
+}
+
+.cal-title-premium {
+    font-size: 1.1rem;
+    color: var(--f-accent);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.date-item-p {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--f-border);
+}
+
+.date-item-p span { font-size: 10px; color: var(--f-text-muted); font-weight: bold; }
+.date-item-p strong { font-size: 14px; color: var(--f-text-primary); }
+
+/* ৬. ইভেন্ট কার্ড */
+.cal-section-title-premium {
+    font-size: 15px;
+    margin: 25px 25px 15px;
+    color: var(--f-text-primary);
+    font-weight: 600;
+}
+
+.ev-premium-card {
+    margin: 0 20px 12px;
+    background: var(--f-bg);
+    border-radius: 18px;
+    border: 1px solid var(--f-border);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.ev-main {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ev-info strong { display: block; font-size: 14px; color: var(--f-text-primary); margin-bottom: 4px; }
+.ev-info small { color: var(--f-accent); font-size: 11px; display: block; line-height: 1.4; }
+
+.ev-arrow {
+    color: var(--f-text-muted);
+    opacity: 0.4;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ev-premium-card.active { 
+    background: var(--f-accent-soft); 
+    border-color: var(--f-accent); 
+}
+.ev-premium-card.active .ev-arrow { transform: rotate(90deg); color: var(--f-accent); opacity: 1; }
+
+.ev-details-p {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s;
+    padding: 0 15px;
+}
+
+.ev-premium-card.active .ev-details-p { grid-template-rows: 1fr; padding: 0 15px 15px; }
+
+.details-inner {
+    min-height: 0;
+    font-size: 12.5px;
+    color: var(--f-text-secondary);
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.cal-glass-sidebar::-webkit-scrollbar { width: 0px; }
+
+/* ফুটনোট স্টাইল */
+.cal-footnote {
+    margin-top: 30px;
+    padding: 15px 25px 40px;
+    font-size: 10px;
+    color: var(--f-text-muted);
+    text-align: center;
+    line-height: 1.5;
+    border-top: 1px solid var(--f-border);
+    opacity: 0.6;
+}
+
