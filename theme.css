@@ -1,38 +1,37 @@
 
-/* ব্রাউজারকে সিগন্যাল দেওয়া যে এই ওয়েবসাইট লাইট ও ডার্ক উভয় মোড সাপোর্ট করে */
-:root {
-    color-scheme: light dark;
-}
 
-/* ১. ডিফল্ট লাইট থিম */
+/* ১. লাইট মোড (ডিফল্ট) */
 :root {
     --f-bg: #f9f9f9;
-    --f-card: #ffffff;
     --f-text-primary: #1a1a1a;
-    --f-text-secondary: #555555;
-    --f-text-muted: #888888;
-    --f-border: rgba(0, 0, 0, 0.08);
+    --f-text-secondary: #444;
+    --f-text-muted: #777;
     --f-search-bg: #ffffff;
-    --f-shadow: rgba(0, 0, 0, 0.04);
-    --f-accent: #EE3F3F;
-    --f-accent-soft: rgba(238, 63, 63, 0.08);
-    --f-divider: #f2f2f2;
+    --f-border: #e0e0e0;
+    --f-card: #ffffff;
+    --f-shadow: rgba(0, 0, 0, 0.08);
+    --f-accent: #ff4d4d;
+    --f-accent-soft: rgba(255, 77, 77, 0.1);
+    --f-divider: #f0f0f0;
 }
 
-/* ২. ডার্ক থিম - এখানে !important ব্যবহারের প্রয়োজন নেই যদি আপনার মিডিয়া কুয়েরি কাজ করে */
+/* ২. ডার্ক মোড (অটোমেটিক) */
 @media (prefers-color-scheme: dark) {
     :root {
-        --f-bg: #121212;        
-        --f-card: #1e1e1e;      
-        --f-text-primary: #f0f0f0; /* আরও একটু উজ্জ্বল করা হয়েছে পড়ার সুবিধার জন্য */
-        --f-text-secondary: #b0b0b0;
-        --f-text-muted: #777777;
-        --f-border: rgba(255, 255, 255, 0.12);
-        --f-search-bg: #252525;
+        --f-bg: #121212;
+        --f-text-primary: #ffffff;
+        --f-text-secondary: #bbbbbb;
+        --f-text-muted: #999999;
+        --f-search-bg: #1e1e1e;
+        --f-border: #333333;
+        --f-card: #1e1e1e;
         --f-shadow: rgba(0, 0, 0, 0.4);
-        --f-accent: #ff6b6b;    
-        --f-accent-soft: rgba(255, 107, 107, 0.15);
-        --f-divider: #2c2c2c;
+        --f-divider: #2a2a2a;
+        --f-accent-soft: rgba(255, 77, 77, 0.15);
     }
 }
 
+/* ৩. স্মুথ থিম ট্রানজিশন */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
