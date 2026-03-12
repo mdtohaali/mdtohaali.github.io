@@ -5,10 +5,10 @@ body.sidebar-open {
 }
 
 body {
-    background-color: var(--f-bg); /* আপডেট */
+    background-color: var(--f-bg);
     margin: 0;
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    color: var(--f-text-primary); /* আপডেট */
+    color: var(--f-text-primary);
 }
 
 .f-container {
@@ -17,38 +17,46 @@ body {
     padding: 0 12px 20px;
 }
 
-/* সার্চবার ডিজাইন */
+/* সার্চবার ডিজাইন - আপডেট করা হয়েছে যাতে দেখা যায় */
 .f-search-wrapper {
     max-width: 800px;
-    margin: 15px auto 20px;
+    /* মার্জিন বাড়ানো হয়েছে যাতে হেডারের নিচে না লুকায় */
+    margin: 100px auto 20px; 
     padding: 0 12px;
-    display: block;
+    display: block !important; /* নিশ্চিতভাবে দেখানোর জন্য */
     clear: both;
+    position: relative;
+    z-index: 10;
 }
 
 .f-search-input {
     width: 100%;
     padding: 12px 18px;
     border-radius: 12px;
-    border: 1px solid var(--f-border); /* আপডেট */
-    background: var(--f-search-bg); /* আপডেট */
-    color: var(--f-text-primary); /* আপডেট */
+    border: 1px solid var(--f-border);
+    background: var(--f-search-bg);
+    color: var(--f-text-primary);
     font-size: 14px;
     outline: none;
     box-sizing: border-box;
-    box-shadow: 0 2px 8px var(--f-shadow); /* আপডেট */
+    box-shadow: 0 4px 12px var(--f-shadow); /* শ্যাডো একটু বাড়ানো হয়েছে */
+    transition: all 0.3s ease;
+}
+
+.f-search-input:focus {
+    border-color: var(--f-accent);
 }
 
 /* কার্ড স্টাইল */
 .f-item {
-    background: var(--f-card); /* আপডেট */
+    background: var(--f-card);
     border-radius: 15px;
     padding: 16px 20px;
     margin-bottom: 12px;
-    border: 1px solid var(--f-border); /* আপডেট */
+    border: 1px solid var(--f-border);
     position: relative;
     cursor: pointer;
-    box-shadow: 0 2px 5px var(--f-shadow); /* আপডেট */
+    box-shadow: 0 2px 5px var(--f-shadow);
 }
 
 .f-item.no-title { padding-bottom: 38px; }
@@ -58,20 +66,20 @@ body {
 .f-cat {
     font-size: 10px; 
     font-weight: 700; 
-    color: var(--f-accent); /* আপডেট */
-    background: var(--f-accent-soft); /* আপডেট */
+    color: var(--f-accent);
+    background: var(--f-accent-soft);
     padding: 2px 8px; 
     border-radius: 4px;
 }
 
 .f-author { 
     font-size: 10.5px; 
-    color: var(--f-text-muted); /* আপডেট */
+    color: var(--f-text-muted);
     margin-left: 6px; 
 }
 
 .f-title {
-    color: var(--f-text-primary) !important; /* আপডেট */
+    color: var(--f-text-primary) !important;
     font-size: 16px; 
     font-weight: 600;
     line-height: 1.45; 
@@ -83,8 +91,8 @@ body {
     font-size: 15px; 
     font-weight: 400; 
     font-style: italic; 
-    color: var(--f-text-secondary) !important; /* আপডেট */
-    border-left: 3px solid var(--f-accent-soft); /* আপডেট */
+    color: var(--f-text-secondary) !important;
+    border-left: 3px solid var(--f-accent-soft);
     padding-left: 12px;
 }
 
@@ -93,7 +101,7 @@ body {
     bottom: 12px; 
     right: 20px;
     font-size: 11px; 
-    color: var(--f-text-muted); /* আপডেট */
+    color: var(--f-text-muted);
 }
 .f-quote-author::before { content: "— "; }
 
@@ -109,8 +117,8 @@ body {
 .f-content-inner {
     padding-top: 15px; 
     margin-top: 15px;
-    border-top: 1px solid var(--f-divider); /* আপডেট */
-    color: var(--f-text-secondary); /* আপডেট */
+    border-top: 1px solid var(--f-divider);
+    color: var(--f-text-secondary);
     font-size: 14.5px; 
     line-height: 1.75;
 }
