@@ -1,4 +1,4 @@
-Import { renderLifeGraph } from '../sidebar/graph/graph-logic.js';
+import { renderLifeGraph } from '../sidebar/graph/graph-logic.js';
 import { renderZakatGraph } from '../sidebar/graph/zakat-logic.js';
 
 const SETTINGS = {
@@ -98,6 +98,4 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 } else {
     document.addEventListener('DOMContentLoaded', renderSecurityBox);
 }
-
-
-
+ 
