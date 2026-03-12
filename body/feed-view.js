@@ -31,7 +31,6 @@ export function renderNewsFeed() {
         };
     });
 
-    // এখানে শুধু কন্টেন্ট লিস্ট থাকবে, সার্চ বক্স এখন index.html এ
     return `
         <div id="fList" class="f-container">
             ${generateFeedHTML(finalData)}
