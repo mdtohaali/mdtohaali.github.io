@@ -86,7 +86,7 @@
 .sidebar::after {
     content: "";
     display: block;
-    height: 5px;
+    height: 20px;
     width: 100%;
 }
 
