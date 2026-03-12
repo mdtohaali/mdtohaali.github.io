@@ -1,0 +1,167 @@
+/* ১. কন্টেইনার এবং কার্ড */
+.p-container { 
+    padding: 0 5px; 
+    margin-top: 20px;
+    margin-bottom: 0px !important; 
+}
+
+.p-card { 
+    background: var(--f-card); /* আপডেট */
+    border-radius: 24px; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border: 1px solid var(--f-border); /* আপডেট */
+    box-shadow: 0 4px 15px var(--f-shadow);
+}
+
+.p-title { 
+    color: var(--f-text-primary) !important; /* আপডেট */
+    text-align: center; 
+    font-weight: 800; 
+    margin-bottom: 15px; 
+    font-size: 18px; 
+}
+
+/* ২. আমার সম্পর্কে বর্ণনা */
+.p-about-scroll {
+    max-height: 85px;
+    overflow-y: auto;
+    margin-bottom: 24px;
+    padding-right: 5px;
+}
+
+.p-desc { 
+    color: var(--f-text-secondary); /* আপডেট */
+    text-align: center; 
+    font-size: 13px; 
+    line-height: 1.6; 
+}
+
+/* ৩. গ্রিড এবং স্ক্রল এরিয়া */
+.p-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+
+.p-scroll-area {
+    max-height: 195px; 
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* ৪. কাস্টম স্ক্রলবার */
+.p-scroll-area::-webkit-scrollbar,
+.p-about-scroll::-webkit-scrollbar {
+    width: 3px;
+}
+
+.p-scroll-area::-webkit-scrollbar-thumb,
+.p-about-scroll::-webkit-scrollbar-thumb {
+    background: var(--f-border); /* আপডেট */
+    border-radius: 10px;
+}
+
+/* ৫. বাটন এবং লিঙ্ক */
+.p-tab, .p-link {
+    background: var(--f-bg); /* আপডেট */
+    border: 1px solid var(--f-border); /* আপডেট */
+    color: var(--f-text-primary) !important; 
+    padding: 10px 2px; 
+    border-radius: 16px; 
+    text-align: center;
+    font-size: 12px; 
+    font-weight: 600; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none !important;
+    user-select: none;
+}
+
+.p-tab.active { 
+    background: var(--f-accent-soft) !important; /* আপডেট */
+    border-color: var(--f-accent) !important;
+    color: var(--f-accent) !important;
+}
+
+/* ৬. বিস্তারিত বক্স অ্যানিমেশন */
+.p-detail-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--f-bg); /* আপডেট */
+    border-radius: 18px;
+    margin-top: 0;
+}
+
+#info-content {
+    padding: 18px;
+    color: var(--f-text-primary) !important; 
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* ৭. এন্টারপ্রাইজ আইটেম */
+.p-item { 
+    background: var(--f-bg); /* আপডেট */
+    padding: 16px; 
+    border-radius: 18px; 
+    margin-bottom: 12px; 
+    border: 1px solid var(--f-border); /* আপডেট */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.p-item-head strong { 
+    color: var(--f-text-primary); /* আপডেট */
+    display: block; 
+    font-size: 15px; 
+    margin-bottom: 2px; 
+}
+
+.p-item-head span { 
+    color: var(--f-text-muted); /* আপডেট */
+    font-size: 11px; 
+}
+
+/* ৮. এক্সপেরিয়েন্স লেআউট */
+.experience-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+}
+
+.role-text { font-size: 15px; color: var(--f-text-primary); font-weight: 700; }
+.company-text { font-size: 12px; color: var(--f-text-secondary); }
+.duration-text { font-size: 11px; color: var(--f-text-muted); margin-top: 2px; }
+
+/* ৯. বডি কন্টেন্ট অ্যানিমেশন */
+.p-item-body-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-body-content {
+    color: var(--f-text-secondary) !important; /* আপডেট */
+    padding-top: 15px;
+    margin-top: 12px;
+    border-top: 1px solid var(--f-divider); /* আপডেট */
+    line-height: 1.6;
+}
+
+/* ১০. কন্টাক্ট নোট */
+.p-contact-note {
+    margin-top: 10px;
+    padding: 0 15px 10px !important; 
+    color: var(--f-text-muted); /* আপডেট */
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
