@@ -1,0 +1,179 @@
+/* ১. গ্লাস-মর্ফিজম মেইন কন্টেইনার */
+.life-graph-container {
+    width: 95%; 
+    max-width: 400px; 
+    margin: 20px auto;
+    padding: 20px 10px; 
+    background: var(--f-card); /* আপডেট: থিম অনুযায়ী ব্যাকগ্রাউন্ড */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid var(--f-border); /* আপডেট */
+    box-shadow: 0 8px 32px var(--f-shadow); /* আপডেট */
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+/* ২. মাইলস্টোন স্ক্রল এরিয়া */
+.milestone-scroll-area {
+    max-height: 250px; 
+    overflow-y: auto;
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ৩. কাস্টম চিকন স্ক্রলবার */
+.milestone-scroll-area::-webkit-scrollbar {
+    width: 3px;
+}
+
+.milestone-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.milestone-scroll-area::-webkit-scrollbar-thumb {
+    background: var(--f-border); /* আপডেট */
+    border-radius: 10px;
+}
+
+/* ৪. শিরোনাম */
+.graph-title {
+    text-align: center;
+    color: var(--f-text-primary); /* আপডেট */
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ৫. কার্ড ডিজাইন */
+.life-milestone-card, .zakat-unit-card {
+    background: var(--f-bg); /* আপডেট */
+    padding: 18px 15px; 
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 1px solid var(--f-border); /* আপডেট */
+    transition: all 0.4s ease;
+    width: 100%; 
+    display: block;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.life-milestone-card:active, .zakat-unit-card:active {
+    background: var(--f-accent-soft); /* আপডেট */
+    transform: scale(0.99);
+}
+
+/* ৬. লেআউট ও টাইপোগ্রাফি */
+.milestone-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.milestone-label {
+    font-size: 14px;
+    color: var(--f-text-primary); /* আপডেট */
+    text-align: left;
+    font-weight: 600;
+}
+
+.days-text {
+    font-size: 12px;
+    color: var(--f-text-muted); /* আপডেট */
+}
+
+/* ৭. প্রগ্রেস বার */
+.progress-bg {
+    width: 100%;
+    height: 6px; /* একটু মোটা করা হয়েছে ফিনিশিংয়ের জন্য */
+    background: var(--f-border); /* আপডেট */
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--f-accent-soft); /* আপডেট */
+    transition: width 1.5s ease-in-out;
+    /* আপনি চাইলে এখানে আপনার থিম কালার বা ভেরিয়েবল ব্যবহার করতে পারেন */
+    background: var(--f-accent); 
+}
+
+/* ৮. জাকাত সেকশন */
+.zakat-circle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.zakat-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+    background: var(--f-border);
+}
+
+.zakat-unit-card.z-open .zakat-circle {
+    outline: 1.5px solid var(--f-accent); /* আপডেট */
+    box-shadow: 0 0 15px var(--f-accent-soft); /* আপডেট */
+}
+
+.zakat-inner-circle {
+    width: 42px;
+    height: 42px;
+    background: var(--f-card); /* আপডেট */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zakat-percent-text {
+    font-size: 10px;
+    color: var(--f-text-primary); /* আপডেট */
+    font-weight: 700;
+}
+
+/* ৯. বিস্তারিত লেখা */
+.info-inner-card p, .zakat-details-box p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--f-text-secondary); /* আপডেট */
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* ১০. টগল ও অ্যানিমেশন */
+.life-details-pane, .zakat-details-box {
+    display: none;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid var(--f-divider); /* আপডেট */
+    animation: fadeInSlide 0.4s ease forwards;
+}
+
+.zakat-unit-card.z-open .zakat-details-box,
+.life-milestone-card.open .life-details-pane {
+    display: block !important;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
