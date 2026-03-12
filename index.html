@@ -22,7 +22,11 @@
         </div>
     </header>
     
-    <div id="search-box-container"></div> 
+    <div id="search-box-container" class="f-search-wrapper" style="margin: 0; padding: 0 15px 10px;">
+        <input type="text" id="fSearch" class="f-search-input" 
+               placeholder="শিরোনাম, লেখক বা বিষয় দিয়ে খুঁজুন..." 
+               onkeyup="filterKnowledge()">
+    </div> 
 </div>
 
 <main id="home-body" class="home-feed-container">
