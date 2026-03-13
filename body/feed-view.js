@@ -27,7 +27,6 @@ export function renderNewsFeed() {
         };
     });
 
-    // সার্চ বক্স এখান থেকে সরানো হয়েছে
     return `
         <div id="fList" class="f-container">
             ${generateFeedHTML(finalData)}
@@ -81,13 +80,28 @@ window.handleCardToggle = function(element, canExpand) {
     }
 };
 
+// আপডেট করা সার্চ লজিক
 window.filterKnowledge = function() {
-    const term = document.getElementById('fSearch').value.toLowerCase().trim();
-    const filtered = feedData.filter(p => 
-        (p.title || "").toLowerCase().includes(term) || 
-        (p.author || "").toLowerCase().includes(term) || 
-        (p.category || "").toLowerCase().includes(term) ||
-        (p.fullDetails || "").toLowerCase().includes(term)
-    );
-    document.getElementById('fList').innerHTML = generateFeedHTML(filtered);
+    const searchInput = document.getElementById('fSearch');
+    if (!searchInput) return;
+
+    const term = searchInput.value.toLowerCase().trim();
+    
+    // সরাসরি feedData থেকে ফিল্টার করা হচ্ছে যা ইম্পোর্ট করা হয়েছে
+    const filtered = feedData.filter(p => {
+        const title = (p.title || "").toLowerCase();
+        const author = (p.author || "").toLowerCase();
+        const category = (p.category || "").toLowerCase();
+        const details = (p.fullDetails || "").toLowerCase();
+
+        return title.includes(term) || 
+               author.includes(term) || 
+               category.includes(term) || 
+               details.includes(term);
+    });
+
+    const listElement = document.getElementById('fList');
+    if (listElement) {
+        listElement.innerHTML = generateFeedHTML(filtered);
+    }
 };
