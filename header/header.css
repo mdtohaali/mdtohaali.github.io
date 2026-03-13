@@ -1,4 +1,4 @@
-/* ১. হেডারের মেইন র‍্যাপার (যা হাইড/শো হবে) */
+/* ১. হেডারের মেইন র‍্যাপার (অপরিবর্তিত) */
 .header-area-wrapper {
     position: fixed;
     top: 0;
@@ -10,34 +10,41 @@
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ২. স্ক্রল করলে হাইড হবে */
+/* ২. স্ক্রল বিহেভিয়ার (অপরিবর্তিত) */
 .header-area-wrapper.header-hidden {
     transform: translateY(-110%);
 }
 
-/* ৩. হেডার কন্টেন্ট */
+/* ৩. হেডার কন্টেন্ট - প্যাডিং কমানো হয়েছে */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px;
+    padding: 8px 15px; /* ১০px থেকে কমিয়ে ৮px করা হয়েছে */
     background: transparent;
 }
 
-/* ৪. টাইপো ও বাটন স্টাইল */
+/* ৪. টাইপো ও বাটন স্টাইল (অপরিবর্তিত) */
 .header-title { color: var(--f-text-primary); }
 .header-cal-btn-premium { color: var(--f-accent); }
 
-/* ৫. সার্চ বক্স কন্টেইনার */
+/* ৫. সার্চ বক্স কন্টেইনার - গ্যাপ নিয়ন্ত্রণ */
 #search-box-container {
     width: 100%;
     background: transparent;
 }
 
-/* অতিরিক্ত: নিউজফিড কন্টেন্ট পজিশনিং */
+/* সার্চ বক্সের ইনপুট ফিল্ডের মার্জিন এবং প্যাডিং ফিক্স */
+.f-search-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px 5px; /* নিচের ১০px গ্যাপ কমিয়ে ৫px করা হয়েছে */
+}
+
+/* ৬. নিউজফিড কন্টেন্ট পজিশনিং - অতিরিক্ত ফাঁকা জায়গা কমানো */
 .f-container {
     max-width: 800px;
     margin: 0 auto;
-    /* এখানে ১২০পিক্সেল প্যাডিং দেওয়া হয়েছে যাতে হেডার কন্টেন্ট না ঢাকে */
-    padding: 120px 12px 20px; 
+    /* ১২০px থেকে কমিয়ে ১০৫px করা হয়েছে যাতে ফিড উপরে উঠে আসে */
+    padding: 105px 12px 20px; 
 }
