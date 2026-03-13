@@ -2,17 +2,18 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: -300px;
-    width: 300px;
+    left: -100%; /* ৩০০ পিক্সেলের বদলে ১০০% যাতে পুরোপুরি বামে লুকিয়ে থাকে */
+    width: 100%;  /* ৩০০ পিক্সেলের বদলে ১০০% যাতে পূর্ণ স্ক্রিন দেখায় */
     height: 100vh;
     overflow-y: auto;
-    /* ফিক্সড কালারের বদলে ভেরিয়েবল */
+    /* আপনার দেওয়া ভেরিয়েবল হুবহু রাখা হয়েছে */
     background: var(--f-card); 
     box-shadow: 4px 0 20px var(--f-shadow);
     transition: left 0.3s ease;
     z-index: 1000;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+    /* ফুল স্ক্রিন হলে সাধারণত রেডিয়াস লাগে না, তবে আপনি চাইলে রাখতে পারেন */
+    border-top-right-radius: 0; 
+    border-bottom-right-radius: 0;
     padding-bottom: 20px; 
     scroll-behavior: smooth; 
 }
@@ -29,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.4); /* ওভারলে সবসময় একটু ডার্ক থাকাই ভালো */
+    background: rgba(0, 0, 0, 0.4); 
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     opacity: 0;
@@ -50,7 +51,6 @@
     right: 20px;
     font-size: 22px;
     cursor: pointer;
-    /* টেক্সট কালার ভেরিয়েবল অনুযায়ী */
     color: var(--f-text-primary); 
     z-index: 1001;
     transition: color 0.3s ease;
@@ -61,25 +61,30 @@
 }
 
 .closeBtn:hover {
-    color: var(--f-accent); /* থিম কালার অনুযায়ী হাইলাইট হবে */
+    color: var(--f-accent); 
 }
 
-/* স্ক্রলবার স্টাইল */
+/* স্ক্রলবার স্টাইল - ক্রস ব্রাউজার সাপোর্ট (Firefox) */
+.sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--f-border) transparent;
+}
+
+/* স্ক্রলবার স্টাইল (Chrome, Brave, Safari) */
 .sidebar::-webkit-scrollbar {
     width: 4px;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    /* স্ক্রলবারের রঙ এখন বর্ডার কালারের সাথে মিলবে */
     background: var(--f-border);
     border-radius: 10px;
 }
 
-/* Responsive */
+/* Responsive - সব ডিভাইসে ফুল স্ক্রিন রাখার জন্য এটি আপডেট করা হয়েছে */
 @media (max-width:768px) {
     .sidebar {
-        width: 300px;
-        left: -300px;
+        width: 100%;
+        left: -100%;
     }
 }
 
@@ -89,4 +94,3 @@
     height: 20px;
     width: 100%;
 }
-
