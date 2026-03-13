@@ -1,4 +1,4 @@
-/* ১. হেডারের মেইন র‍্যাপার (যা হাইড/শো হবে) */
+/* ১. হেডারের মেইন র‍্যাপার */
 .header-area-wrapper {
     position: fixed;
     top: 0;
@@ -10,17 +10,17 @@
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ২. স্ক্রল করলে হাইড হবে */
+/* ২. স্ক্রল বিহেভিয়ার */
 .header-area-wrapper.header-hidden {
     transform: translateY(-110%);
 }
 
-/* ৩. হেডার কন্টেন্ট - এখানে গ্যাপ সামান্য কমানো হয়েছে */
+/* ৩. হেডার কন্টেন্ট - প্যাডিং একদম কমিয়ে ৫px করা হয়েছে */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 15px; /* ১০px থেকে কমিয়ে ৮px করা হয়েছে */
+    padding: 5px 15px; /* ১০px থেকে কমিয়ে ৫px */
     background: transparent;
 }
 
@@ -28,7 +28,7 @@
 .header-title { color: var(--f-text-primary); }
 .header-cal-btn-premium { color: var(--f-accent); }
 
-/* ৫. সার্চ বক্স কন্টেইনার */
+/* ৫. সার্চ বক্স কন্টেইনার - গ্যাপ ০ এর কাছাকাছি */
 #search-box-container {
     width: 100%;
     background: transparent;
@@ -37,13 +37,19 @@
 .f-search-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 15px 2px; /* ৫px থেকে কমিয়ে ৪px করা হয়েছে */
+    padding: 0 15px 2px; /* ৫px থেকে কমিয়ে ২px করা হয়েছে */
 }
 
-/* অতিরিক্ত: নিউজফিড কন্টেন্ট পজিশনিং - কার্ডগুলো উপরে উঠানো হয়েছে */
+/* ৬. নিউজফিড কন্টেন্ট পজিশনিং - ৯৫% গ্যাপ রিমুভাল */
 .f-container {
     max-width: 800px;
     margin: 0 auto;
-    /* আপনার ১০৫px থেকে কমিয়ে ৯৫px করা হয়েছে যাতে বড় ফাঁকা জায়গাটি না থাকে */
-    padding: 95px 12px 20px; 
+    /* আপনার ১০৫px থেকে কমিয়ে ৮২px করা হয়েছে */
+    /* এটি কন্টেন্টকে একদম সার্চ বক্সের গা ঘেঁষে উপরে তুলে দেবে */
+    padding: 82px 12px 20px; 
+}
+
+/* ৭. কার্ডগুলোর মাঝখানের গ্যাপ কমাতে চাইলে এটি যোগ করতে পারেন */
+.f-item {
+    margin-bottom: 8px; /* কার্ডের নিচের গ্যাপ কমানো হয়েছে */
 }
