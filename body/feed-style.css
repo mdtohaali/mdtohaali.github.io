@@ -14,16 +14,14 @@ body {
 .f-container {
     max-width: 800px;
     margin: 0 auto;
-    /* প্যাডিং কমানো হয়েছে যাতে কার্ডগুলো সার্চবারের কাছাকাছি থাকে */
-    padding: 0 12px 15px; 
+    /* প্যাডিং header.css থেকে নিয়ন্ত্রিত হচ্ছে */
 }
 
-/* সার্চবার ডিজাইন - গ্যাপ কমানোর মূল জায়গা */
+/* সার্চবার ডিজাইন */
 .f-search-wrapper {
     max-width: 800px;
-    /* ১০০px মার্জিন কমিয়ে ৮০px করা হয়েছে যাতে হেডারের ঠিক নিচ থেকে শুরু হয় */
-    margin: 80px auto 10px; 
-    padding: 0 12px;
+    /* মার্জিন ০ করা হয়েছে কারণ এটি হেডারের ভেতরে আছে */
+    margin: 0 auto; 
     display: block !important;
     clear: both;
     position: relative;
@@ -53,7 +51,6 @@ body {
     background: var(--f-card);
     border-radius: 15px;
     padding: 16px 20px;
-    /* কার্ডের মাঝখানের গ্যাপ ১২px থেকে কমিয়ে ৮px করা হয়েছে */
     margin-bottom: 8px; 
     border: 1px solid var(--f-border);
     position: relative;
