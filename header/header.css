@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 15px; /* ১০px থেকে কমিয়ে ৮px করা হয়েছে */
+    padding: 5px 15px; /* ১০px থেকে কমিয়ে ৮px করা হয়েছে */
     background: transparent;
 }
 
@@ -37,7 +37,7 @@
 .f-search-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 15px 4px; /* ৫px থেকে কমিয়ে ৪px করা হয়েছে */
+    padding: 0 15px 2px; /* ৫px থেকে কমিয়ে ৪px করা হয়েছে */
 }
 
 /* অতিরিক্ত: নিউজফিড কন্টেন্ট পজিশনিং - কার্ডগুলো উপরে উঠানো হয়েছে */
