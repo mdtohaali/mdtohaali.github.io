@@ -15,12 +15,12 @@
     transform: translateY(-110%);
 }
 
-/* ৩. হেডার কন্টেন্ট */
+/* ৩. হেডার কন্টেন্ট - এখানে গ্যাপ সামান্য কমানো হয়েছে */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px;
+    padding: 8px 15px; /* ১০px থেকে কমিয়ে ৮px করা হয়েছে */
     background: transparent;
 }
 
@@ -37,12 +37,13 @@
 .f-search-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 15px 5px; /* গ্যাপ কমানো হয়েছে */
+    padding: 0 15px 4px; /* ৫px থেকে কমিয়ে ৪px করা হয়েছে */
 }
 
-/* অতিরিক্ত: নিউজফিড কন্টেন্ট পজিশনিং */
+/* অতিরিক্ত: নিউজফিড কন্টেন্ট পজিশনিং - কার্ডগুলো উপরে উঠানো হয়েছে */
 .f-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 105px 12px 20px; /* গ্যাপ কমিয়ে ১২০ থেকে ১০৫ করা হয়েছে */
+    /* আপনার ১০৫px থেকে কমিয়ে ৯৫px করা হয়েছে যাতে বড় ফাঁকা জায়গাটি না থাকে */
+    padding: 95px 12px 20px; 
 }
