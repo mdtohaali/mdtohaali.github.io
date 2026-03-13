@@ -1,4 +1,4 @@
-/* সাইডবার ওপেন থাকলে বডি স্ক্রল লক */
+/* সাইডবার ওপেন থাকলে বডি স্ক্রল লক (অপরিবর্তিত) */
 body.sidebar-open {
     overflow: hidden !important;
     height: 100vh;
@@ -14,16 +14,17 @@ body {
 .f-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 12px 20px;
+    /* প্যাডিং কমানো হয়েছে যাতে কার্ডগুলো সার্চবারের কাছাকাছি থাকে */
+    padding: 0 12px 15px; 
 }
 
-/* সার্চবার ডিজাইন - আপডেট করা হয়েছে যাতে দেখা যায় */
+/* সার্চবার ডিজাইন - গ্যাপ কমানোর মূল জায়গা */
 .f-search-wrapper {
     max-width: 800px;
-    /* মার্জিন বাড়ানো হয়েছে যাতে হেডারের নিচে না লুকায় */
-    margin: 100px auto 20px; 
+    /* ১০০px মার্জিন কমিয়ে ৮০px করা হয়েছে যাতে হেডারের ঠিক নিচ থেকে শুরু হয় */
+    margin: 80px auto 10px; 
     padding: 0 12px;
-    display: block !important; /* নিশ্চিতভাবে দেখানোর জন্য */
+    display: block !important;
     clear: both;
     position: relative;
     z-index: 10;
@@ -39,7 +40,7 @@ body {
     font-size: 14px;
     outline: none;
     box-sizing: border-box;
-    box-shadow: 0 4px 12px var(--f-shadow); /* শ্যাডো একটু বাড়ানো হয়েছে */
+    box-shadow: 0 4px 12px var(--f-shadow);
     transition: all 0.3s ease;
 }
 
@@ -52,7 +53,8 @@ body {
     background: var(--f-card);
     border-radius: 15px;
     padding: 16px 20px;
-    margin-bottom: 12px;
+    /* কার্ডের মাঝখানের গ্যাপ ১২px থেকে কমিয়ে ৮px করা হয়েছে */
+    margin-bottom: 8px; 
     border: 1px solid var(--f-border);
     position: relative;
     cursor: pointer;
@@ -86,7 +88,7 @@ body {
     margin: 0;
 }
 
-/* উক্তি স্টাইল */
+/* উক্তি স্টাইল (অপরিবর্তিত) */
 .f-item.no-title .f-title {
     font-size: 15px; 
     font-weight: 400; 
@@ -105,7 +107,7 @@ body {
 }
 .f-quote-author::before { content: "— "; }
 
-/* ঝাঁকুনি মুক্ত স্মুথ অ্যাকরডিয়ান */
+/* ঝাঁকুনি মুক্ত স্মুথ অ্যাকরডিয়ান (অপরিবর্তিত) */
 .f-details-wrapper {
     display: grid;
     grid-template-rows: 0fr;
@@ -122,4 +124,3 @@ body {
     font-size: 14.5px; 
     line-height: 1.75;
 }
-
