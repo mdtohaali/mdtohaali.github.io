@@ -43,15 +43,18 @@ export const PUBLIC_DATA = {
             { id: "exp1", role: "Operator", company: "Elegant Spinning & Textile Ltd.", duration: "2025. 12. 15 – present", details: "Utility Department (Chiller, Boiler). My fourth and current professional role." },
             { id: "exp2", role: "Assistant Operator", company: "Blossom Spinning Mills", duration: "2024. 11. 09 – 2025. 12. 13", details: "Utility Department (Chiller, Boiler, and Compressor). My third workplace." },
             { id: "exp3", role: "Senior Helper", company: "Formula 1 Spinning Ltd.", duration: "2024. 03. 01 – 2024. 11. 06", details: "Utility Department (Chiller, Boiler). My second professional venture." },
-            { id: "exp4", role: "Helper", company: "Multazim Spinning Mills.", duration: "2023. 12. 27 – 2024. 02. 27 ", details: "Utility Department (Chiller, Boiler). This was the beginning of my professional career." }
-        ]
+           
+       ,{ id: "exp4", role: "Helper", company: "Multazim Spinning Mills.", duration: "2023. 12. 27 – 2024. 02. 27 ", details: "Utility Department (Chiller, Boiler). This was the beginning of my professional career." },
+       {id: "exp5", role:"Agricultural Laborer",company: "",duration:"Before 2023-12-27",details:" I worked as an agricultural laborer on other people's land.",
+           
+       }
+       ]
     },
     contact: {
         social: [
-            { platform: "LinkedIn", link: "https://linkedin.com/in/muhammadtohaali" },
+            { platform: "LinkedIn", link: "https//linkedin.com/in/muhammadtohaali" },
             { platform: "Email", link: "mailto:mdtohaali@yahoo.com" },
             { platform: "X", link: "https://x.com/muhammadtohaali" }
         ]
     }
 };
-
