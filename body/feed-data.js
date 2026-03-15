@@ -9,7 +9,6 @@ export const feedData = [
     
 {
   id: "2",
-  priority:"",
   category: "গণিত",
   author: "SCRIBD",
   title: "ত্রিকোণমিতিক ম্যাজিক হেক্সাগন",
